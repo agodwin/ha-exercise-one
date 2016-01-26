@@ -5,4 +5,5 @@ description.txt
 
 .gem
 /spec/reports/
+/spec/*.marks
 Gemfile.lock
