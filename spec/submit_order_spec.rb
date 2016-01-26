@@ -1,5 +1,7 @@
 require 'watir-webdriver'
 require 'page-object'
+
+# TODO: FIX THIS???
 require '/home/tgodwin/dev/ruby/ha-exercise-one/page/Home.rb'
 
 # a way to toggle logging
@@ -16,12 +18,18 @@ end
 
 RSpec.describe "Submit Order for iPhone" do
     before(:all) do
-        browser = Watir::Browser.new :firefox
-        @home_page = Home.new(browser)        
+        @browser = Watir::Browser.new :firefox
+        @home_page = Home.new(@browser)        
     end
+
+    after(:all) do
+        @browser.close
+    end    
     
     it "view the DEMOQA web page" do
         @home_page.goto
-        log("did it work?")
+        expect(@home_page.iphone?).to be true
+        
+        log("did it work?", true)
     end
 end
