@@ -1,25 +1,14 @@
-require 'watir-webdriver'
-require 'page-object'
+# 
+# run this with bundle exec rspec spec/submit_order_spec.rb -fd
 
-# TODO: FIX THIS???
-require '/home/tgodwin/dev/ruby/ha-exercise-one/page/Home.rb'
-
-# a way to toggle logging
-def log(msg, flag = false)
-    puts msg if flag
-end
-
-# exit suite as soon as one example fails
-# does not run remaining examples 
-RSpec.configure do |c|
-  c.fail_fast = true
-end
-
+require 'spec_helper'
 
 RSpec.describe "Submit Order for iPhone" do
+    home_page = nil
+    product_page = nil
+    
     before(:all) do
         @browser = Watir::Browser.new :firefox
-        @home_page = Home.new(@browser)        
     end
 
     after(:all) do
@@ -27,9 +16,18 @@ RSpec.describe "Submit Order for iPhone" do
     end    
     
     it "view the DEMOQA web page" do
-        @home_page.goto
-        expect(@home_page.iphone?).to be true
+        home_page = Home.new(@browser)        
+        home_page.goto
+
+        expect(home_page.valid?).to be true        
+    end
+    
+    it "select the iPhone product category" do
+        product_page = home_page.select_iphone_category
         
-        log("did it work?", true)
+       expect(product_page.valid?).to be true        
+     end
+
+    it "select the iPhone 4S" do
     end
 end
