@@ -9,7 +9,6 @@
    * a computer connected to the Internet
    * a browser installed on that computer
 
-
 ### Setup:
 #### Verify Git, Ruby, RubyGems, and Bundler are installed on your system
   Open a console window and run the following commands to see if your
@@ -37,14 +36,14 @@
 
   Once you have a GitHub account, open a browser, navigate to GitHub, and
   login to your GitHub account. Once you are logged into your GitHub account,
-  please navigate to GitHub repository with my test code: https://github.com/agodwin/ha-exercise-two
+  please navigate to GitHub repository with my test code: https://github.com/agodwin/ha-exercise-one
      
   In the top right corner of the page, click the <b>Fork</b> button. Now, you
   have a <i>fork</i> of the original <i>agodwin/ha-exercise-two</i> repository
   in your GitHub account.
  
   Still using the browser, and logged into your GitHub account, navigate to
-  your fork of the <i>ha-exercise-two</i> repository. On your fork's
+  your fork of the <i>ha-exercise-one</i> repository. On your fork's
   repository page, locate and copy the clone URL for your fork.
 
   We are almost done, just a few more steps and you will have a copy
@@ -55,7 +54,7 @@
   computer. You <i>clone</i> the repository on your system with the
   following command (replace YOUR-USERNAME with your GitHub user name):
  
-    git clone https://github.com/YOUR-USERNAME/ha-exercise-two.git
+    git clone https://github.com/YOUR-USERNAME/ha-exercise-one.git
    
 #### Update Ruby Gems
   Okay, now that we have the test code on your local computer, we are ready
@@ -65,15 +64,15 @@
   into the new directory and update your Ruby gems by running the following
   commands:
  
-    cd ha-exercise-two/
+    cd ha-exercise-one/
     bundle install
 
    
 ### Run Test: 
-  Once you have updated your Ruby gems, we are ready to run the test.
+  Once you have updated your Ruby gems, we are ready to run the tests.
  
   Using the same console window, or opening a new console, you can run
-  the test with the following command:
+  the tests with the following commands:
 
      bundle exec rspec data_gov_api_spec.rb --format doc
 
@@ -81,15 +80,7 @@
 ### Expected Results: 
   Once the test has completed, your console window should show the following
   results: 
-  
-    Verify data.gov API for Alternative Fuel Stations
-      can list charging stations in Austin, TX
-      the list for Austin, TX includes the HYATT AUSTIN station
-      can use the station id to get information about one station
-      the record for one station has the address of the station
-   
-    Finished in 1.01 seconds (files took 0.42191 seconds to load)
-    4 examples, 0 failures
+  TBD
  
   If you did not get these results, then please let me know. I need this
   job, so I will need to fix any bugs which I wrote! 
