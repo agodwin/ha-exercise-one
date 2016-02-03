@@ -36,7 +36,7 @@ class Black_iPhone_4s
       #click button
       self.buy
 
-      #deal with a pop-up - click checkout
+      #deal with a pop-up - click continue shopping
       # TODO: FIND A BETTER WAY TO DO THIS
       Watir::Wait.until {browser.text.include?('You just added "Apple iPhone 4S 16GB SIM-Free - Black" to your cart.')}
       browser.link(:class => 'continue_shopping').focus      
