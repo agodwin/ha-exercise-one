@@ -12,17 +12,29 @@ class Home
       self.valid?
   end
 
-  def select_iphone_category
+  def select_category(product)
+      next_page = nil
+      
       product_menu_element.hover
-      iphone_menu_item
-
-      # logic to get to the new page
-      pc = ProductCategory_iPhone.new(browser)
-      pc.loaded?
-      pc
+      
+      case product
+      when :iPhone
+          iphone_menu_item          
+          next_page = ProductCategory_iPhone.new(browser)
+          next_page.loaded?
+ 
+      #TODO: finish adding additional menu options           
+      when :accessory
+         accesory_menu_item
+     else
+         raise ArgumentError, "Did not understand argument => #{product}"
+     end
+      # return the new page
+      next_page
   end
 
 private
   link(:product_menu, :href => 'http://store.demoqa.com/products-page/product-category/')
   link(:iphone_menu_item, :href => 'http://store.demoqa.com/products-page/product-category/iphones/')  
+  link(:accesory_menu_item, :href => 'http://store.demoqa.com/products-page/product-category/accessories/')
 end
