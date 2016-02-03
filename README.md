@@ -74,11 +74,11 @@
   Using the same console window, or opening a new console, you can run
   the tests with the following commands:
 
-     bundle exec rspec data_gov_api_spec.rb --format doc
+     bundle exec rspec spec/submit_order_spec.rb --format doc
 
     
 ### Expected Results: 
-  Once the test has completed, your console window should show the following
+  Once each test has completed, your console window should show the following
   results: 
   TBD
  
