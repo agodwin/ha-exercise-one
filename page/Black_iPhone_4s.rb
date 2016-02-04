@@ -27,7 +27,7 @@ class Black_iPhone_4s
       browser.send_keys :enter
       
       #return shopping cart page
-      next_page = Checkout.new(browser)
+      next_page = Checkout_Cart.new(browser)
       next_page.loaded?
       next_page      
   end
