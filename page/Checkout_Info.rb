@@ -16,6 +16,15 @@ class Checkout_Info
   
   def select_country(name)
       log "COUNTRY REQUESTED is #{name}"    
+
+      # verify name an option in the country select list?
+      #TODO: VERIFICATION IS VERY VERY SLOW ??? WHY ???
+      #list = country_options
+      #if (list.find_index(name) == nil) then
+      #    log "DID NOT FIND COUNTRY \"#{name}\" in #{list}", true
+      #    return false
+      #end
+      
       # set the option and update the page
       country = name
       calculate_button
@@ -25,15 +34,17 @@ class Checkout_Info
       
       log "COUNTRY SELECTED is #{country}"
       
-      log "SHIPPING PRICE #{shipping_price_str}"      
-      log "ITEM PRICE #{product_price_str}"      
-      log "TOTAL PRICE #{total_price_str}"
-
+      # give feedback on the result
       country.eql? name      
   end
   
   def total_price_valid?
       # convert strings to integers
+            
+      log "SHIPPING PRICE #{shipping_price_str}"      
+      log "ITEM PRICE #{product_price_str}"      
+      log "TOTAL PRICE #{total_price_str}"
+
       shipping = convert_currency shipping_price_str
       item = convert_currency product_price_str
       total = convert_currency total_price_str
