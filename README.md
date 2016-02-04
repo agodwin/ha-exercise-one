@@ -76,6 +76,16 @@
 
      bundle exec rspec spec/submit_order_spec.rb --format doc
 
+     EXPECT RESULTS: 
+        Validate iPhone Order Total
+            view the DEMOQA web page
+            select the iPhone product category
+            select the iPhone 4S and checkout
+            validate shipping plus item cost equals total price
+        
+        Finished in 26.22 seconds (files took 0.41197 seconds to load)
+        4 examples, 0 failures
+
     
 ### Expected Results: 
   Once each test has completed, your console window should show the following

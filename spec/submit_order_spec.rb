@@ -3,7 +3,7 @@
 
 require 'spec_helper'
 
-RSpec.describe "Submit Order for iPhone" do
+RSpec.describe "Validate iPhone Order Total" do
     home_page = nil
     product_page = nil
     checkout_info_page = nil
@@ -44,9 +44,11 @@ RSpec.describe "Submit Order for iPhone" do
         
         checkout_info_page = checkout_cart_page.continue
         expect(checkout_info_page.valid?).to be true 
-        sleep 5
     end
     
-    it "validate price and shipping" 
+    it "validate shipping plus item cost equals total price" do
+        expect(checkout_info_page.select_country("India")).to be true 
+        expect(checkout_info_page.total_price_valid?).to be true 
+    end
 
 end
