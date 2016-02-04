@@ -26,6 +26,7 @@ class Checkout_Info
       #end
       
       # set the option and update the page
+      #TODO: this does not update the UI - HOW DO I FIX IT?
       country = name
       calculate_button
       
