@@ -74,25 +74,23 @@
   Using the same console window, or opening a new console, you can run
   the tests with the following commands:
 
+  <i>FIRST TEST</i>
      bundle exec rspec spec/submit_order_spec.rb --format doc
 
-     EXPECT RESULTS: 
-        Validate iPhone Order Total
-            view the DEMOQA web page
-            select the iPhone product category
-            select the iPhone 4S and checkout
-            validate shipping plus item cost equals total price
-        
-        Finished in 26.22 seconds (files took 0.41197 seconds to load)
-        4 examples, 0 failures
+  <i>EXPECTED RESULTS:</i> 
+    Validate iPhone Order Total
+        view the DEMOQA web page
+        select the iPhone product category
+        select the iPhone 4S and checkout
+        validate shipping plus item cost equals total price
+    
+    Finished in 26.22 seconds (files took 0.41197 seconds to load)
+    4 examples, 0 failures
 
     
 ### Expected Results: 
-  Once each test has completed, your console window should show the following
-  results: 
-  TBD
- 
-  If you did not get these results, then please let me know. I need this
-  job, so I will need to fix any bugs which I wrote! 
+  Once each test has completed, your console window should show the expected
+  results. If you did not get these results, then please let me know. I need 
+  this job, so I will need to fix any bugs which I wrote! 
 
 
