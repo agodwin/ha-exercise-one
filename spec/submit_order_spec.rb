@@ -37,14 +37,10 @@ RSpec.describe "Submit Order for iPhone" do
         expect(item_page.valid?).to be true 
         
         iphone_price = item_page.price
-        puts "PRICE IS #{iphone_price}"
+        log "PRICE IS #{iphone_price}"
         
-#        checkout_page = item_page.add_to_cart
-#        expect(checkout_page.valid?).to be true
-        page = item_page.add_to_cart_continue_shopping
-        expect(item_page.valid?).to be true
-
-        sleep 2        
+        checkout_page = item_page.add_to_cart
+        expect(checkout_page.valid?).to be true
     end
     
     it "validate price and tax" 
