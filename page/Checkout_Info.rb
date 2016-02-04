@@ -14,8 +14,11 @@ class Checkout_Info
       self.valid?
   end
   
+  def select_country
+  end
 private
-
+    button(:calculate_button, :name => 'wpsc_submit_zipcode')
+    
     #TODO: move this into a page/Page_Helper.rb as it is used in other Checkout pages
     def progress_bar_element(stage)
        browser.div(:class => 'progress_wrapper', :class => 'top').ul.li(:class => stage, :class => 'act')

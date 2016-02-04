@@ -14,14 +14,16 @@ class Checkout_Cart
   end
   
   def continue
-      continue
+      continue_button
+      
       next_page = Checkout_Info.new(browser)
-      next_page.loaded?        
+      next_page.loaded?
+      next_page
   end
   
 private
-    button(:remove_item, :value => 'Remove', :name => 'submit')
-    link(:continue, :class => 'step2')
+    button(:remove_item_button, :value => 'Remove', :name => 'submit')
+    link(:continue_button, :class => 'step2')
 
     #TODO: move this into a page/Page_Helper.rb as it is used in other Checkout pages
     def progress_bar_element(stage)

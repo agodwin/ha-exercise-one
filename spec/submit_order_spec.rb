@@ -6,7 +6,7 @@ require 'spec_helper'
 RSpec.describe "Submit Order for iPhone" do
     home_page = nil
     product_page = nil
-    checkout_page = nil
+    checkout_info_page = nil
     
     iphone_price = nil
     
@@ -39,10 +39,14 @@ RSpec.describe "Submit Order for iPhone" do
         iphone_price = item_page.price
         log "PRICE IS #{iphone_price}"
         
-        checkout_page = item_page.add_to_cart
-        expect(checkout_page.valid?).to be true
+        checkout_cart_page = item_page.add_to_cart
+        expect(checkout_cart_page.valid?).to be true
+        
+        checkout_info_page = checkout_cart_page.continue
+        expect(checkout_info_page.valid?).to be true 
+        sleep 5
     end
     
-    it "validate price and tax" 
+    it "validate price and shipping" 
 
 end
