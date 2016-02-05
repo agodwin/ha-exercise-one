@@ -95,17 +95,17 @@
 
 #####<i>SECOND TEST</i>
 
-     bundle exec rspec spec/submit_order_spec.rb --format doc
+     bundle exec rspec spec/remove_all_items_spec.rb --format doc
 
 #####<i>EXPECTED RESULTS:</i>
 
-    Validate iPhone Order Total
-        view the DEMOQA web page
-        select the iPhone product category
-        select the iPhone 4S and checkout
-        validate shipping plus item cost equals total price
+    Remove all items from the shopping cart
+      view the DEMOQA web page
+      select an item and checkout
+      shopping cart has an item
+      item is removed and shopping cart is empty
     
-    Finished in 26.22 seconds (files took 0.41197 seconds to load)
+    Finished in 33.01 seconds (files took 0.41089 seconds to load)
     4 examples, 0 failures
 
     
