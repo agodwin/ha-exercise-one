@@ -1,6 +1,6 @@
 class Magic_Mouse
   include PageObject
-
+  include PageHelper
   
   def valid?
       browser.title().start_with?("Magic Mouse | ONLINE")
@@ -14,36 +14,15 @@ class Magic_Mouse
   def price
       self.price.text
   end
-  
-  def add_to_cart
-      #click button
-      self.buy
 
-      # deal with a pop-up - click checkout
-      Watir::Wait.until {browser.text.include?('You just added "Magic Mouse" to your cart.')}
-      
-      browser.link(:href => 'http://store.demoqa.com/products-page/checkout/').focus      
-      browser.send_keys :enter
-      
-      #return shopping cart page
-      next_page = Checkout_Cart.new(browser)
-      next_page.loaded?
-      next_page      
+  def add_to_cart
+      add_checkout 'You just added "Magic Mouse" to your cart.'
   end
   
   def add_to_cart_continue_shopping
-      #click button
-      self.buy
-
-      #deal with a pop-up - click continue shopping
-      Watir::Wait.until {browser.text.include?('You just added "Magic Mouse" to your cart.')}
-      browser.link(:class => 'continue_shopping').focus      
-      browser.send_keys :enter
-      
-      #return this item page
-      self
+      add_continue 'You just added "Magic Mouse" to your cart.'
   end
-  
+
 private
     span(:price, :class => 'currentprice')
     button(:buy, :name => 'Buy')
