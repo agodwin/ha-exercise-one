@@ -1,5 +1,6 @@
 class Checkout_Cart
     include PageObject
+    include PageHelper
 
   
     def valid?
@@ -36,9 +37,4 @@ private
     link(:continue_button, :class => 'step2')
     table(:shopping_cart, :class => 'checkout_cart')
     div(:empty_message, :class => 'entry-content')
-
-    #TODO: move this into a page/Page_Helper.rb as it is used in other Checkout pages
-    def progress_bar_element(stage)
-       browser.div(:class => 'progress_wrapper', :class => 'top').ul.li(:class => stage, :class => 'act')
-    end
 end

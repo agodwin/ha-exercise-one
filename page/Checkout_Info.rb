@@ -1,5 +1,6 @@
 class Checkout_Info
   include PageObject
+  include PageHelper
 
   
   def valid?
@@ -56,11 +57,6 @@ class Checkout_Info
 private
     button(:calculate_button, :name => 'wpsc_submit_zipcode')
     select_list(:country, :id => 'current_country')
-    
-    #TODO: move this into a page/Page_Helper.rb as it is used in other Checkout pages
-    def progress_bar_element(stage)
-       browser.div(:class => 'progress_wrapper', :class => 'top').ul.li(:class => stage, :class => 'act')
-    end
     
     def shipping_price_str
         browser.tr(:class => 'total_shipping').span(:class => 'pricedisplay').text

@@ -2,6 +2,8 @@ require 'watir-webdriver'
 require 'page-object'
 
 # pull in all the page files
+# the Page Helper must come first
+require File.expand_path("../page/PageHelper.rb", __dir__)
 Dir[File.expand_path("../page/*.rb", __dir__)].each {|f| require f}
 
 # a way to toggle logging
