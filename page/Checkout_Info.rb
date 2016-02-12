@@ -74,8 +74,8 @@ private
     
     # TODO: FIX THIS - too many assumptions 
     def convert_currency currency_str
-        # assume string starts with a currency symbol, remove it
-        str = currency_str[1..currency_str.length];
+        # remove currency symbol - TODO: this needs to be LOCALIZED
+        str = currency_str.gsub(/\$/,'')
         
         # remove ',' characters - TODO: this needs to be LOCALIZED
         digits = str.gsub(/,/,'')
