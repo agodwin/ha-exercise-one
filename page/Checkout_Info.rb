@@ -26,9 +26,9 @@ class Checkout_Info
       #end
       
       # set the option and update the page
-      #TODO: this does not update the UI - HOW DO I FIX IT?
-      country = name
-      calculate_button
+      # need to use "self" to access the existing Chessy element locator - WHY?
+      self.country = name
+      self.calculate_button
       
       # wait for the page to update
       self.loaded?
@@ -36,14 +36,14 @@ class Checkout_Info
       log "COUNTRY SELECTED is #{country}"
       
       # give feedback on the result
-      country.eql? name      
+      self.country.eql? name      
   end
   
   def total_price_valid?
       # convert strings to integers
             
       log "SHIPPING PRICE #{shipping_price_str}"      
-      log "ITEM PRICE #{product_price_str}"      
+      log "ITEM PRICE #{product_price_str}"     
       log "TOTAL PRICE #{total_price_str}"
 
       shipping = convert_currency shipping_price_str
