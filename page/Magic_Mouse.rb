@@ -19,8 +19,7 @@ class Magic_Mouse
       #click button
       self.buy
 
-      #deal with a pop-up - click checkout
-      # TODO: FIND A BETTER WAY TO DO THIS
+      # deal with a pop-up - click checkout
       Watir::Wait.until {browser.text.include?('You just added "Magic Mouse" to your cart.')}
       
       browser.link(:href => 'http://store.demoqa.com/products-page/checkout/').focus      
@@ -37,7 +36,6 @@ class Magic_Mouse
       self.buy
 
       #deal with a pop-up - click continue shopping
-      # TODO: FIND A BETTER WAY TO DO THIS
       Watir::Wait.until {browser.text.include?('You just added "Magic Mouse" to your cart.')}
       browser.link(:class => 'continue_shopping').focus      
       browser.send_keys :enter
