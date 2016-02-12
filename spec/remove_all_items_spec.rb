@@ -38,13 +38,13 @@ RSpec.describe "Remove all items from the shopping cart" do
     end
     
     it "shopping cart has an item" do
-       expect(checkout_cart_page.is_empty?).to be false
+       expect(checkout_cart_page.empty?).to be false
     end
     
     
     it "item is removed and shopping cart is empty" do
        checkout_cart_page.empty_all
-       expect(checkout_cart_page.is_empty?).to be true        
+       expect(checkout_cart_page.empty?).to be true        
     end
 
 end

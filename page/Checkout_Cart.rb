@@ -22,12 +22,10 @@ class Checkout_Cart
     end
       
     def empty_all
-        while (self.is_empty? == false) do
-            self.remove_item_button
-        end
+        self.remove_item_button while !self.empty? 
     end
   
-    def is_empty?
+    def empty?
         #TODO: fix this it is VERY SLOW when the shopping cart has items
         empty_message.include?("Oops, there is nothing in your cart")
     end
