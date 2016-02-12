@@ -47,7 +47,7 @@ RSpec.describe "Validate iPhone Order Total" do
     end
     
     it "validate shipping plus item cost equals total price" do
-        expect(checkout_info_page.select_country("Bhutan")).to be true 
+        expect(checkout_info_page.select_country("Vietnam")).to be true 
         expect(checkout_info_page.total_price_valid?).to be true 
     end
 
