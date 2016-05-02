@@ -2,6 +2,7 @@
 
 ### Objective:
   Write a suite of three automated browser tests for http://store.demoqa.com
+  These tests use a Page Object pattern. I used the <a href="https://github.com/cheezy/page-object" target=_break>CHeezy page-object gem.</a>
 
   
 ### Prerequisites:
